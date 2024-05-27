@@ -1,7 +1,7 @@
-FROM
+FROM python:3.10.6-buster
 
 COPY requirements.txt /requirements.txt
-COPY
+COPY package/package #edit name fo our package
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
