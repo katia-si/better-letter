@@ -5,6 +5,11 @@ def clean_extracted_text(text):
     text = re.sub(r'(\w+)-\n(\w+)', r'\1\2', text)
     text = text.replace('\n', ' ')
     text = re.sub(r'\s+', ' ', text).strip()
+    # find the index of the first occurrence of "Datum:"
+    datum_index = text.find("Datum:")
+    if datum_index != -1:
+        # remove text before "Datum:"
+        text = text[datum_index+len("Datum:"):]
     return text
 
 def clean_and_save_files(input_directory, output_directory):
