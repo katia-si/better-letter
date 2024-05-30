@@ -1,10 +1,20 @@
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import os
 
+# Initialize the tokenizer and model
 tokenizer = AutoTokenizer.from_pretrained("Shahm/bart-german")
 model = AutoModelForSeq2SeqLM.from_pretrained("Shahm/bart-german")
 
 def generate_summary_longer(text: str) -> str:
+    """
+    Generate a summary for a given text using a pre-trained BART model.
+
+    Args:
+        text (str): The input text to summarize.
+
+    Returns:
+        str: The generated summary.
+    """
     inputs = tokenizer.encode(text, return_tensors="pt", truncation=True, max_length=1024)
     summary_ids = model.generate(
         inputs,
@@ -18,6 +28,13 @@ def generate_summary_longer(text: str) -> str:
     return summary
 
 def summarize_text(input_directory, output_directory):
+    """
+    Summarize text files in the input directory and save the summaries in the output directory.
+
+    Args:
+        input_directory (str): Path to the directory containing the input text files.
+        output_directory (str): Path to the directory where summary text files will be saved.
+    """
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
 
