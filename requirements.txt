@@ -10,3 +10,5 @@ scikit-learn
 sentencepiece
 transformers
 easyocr
+io
+PIL

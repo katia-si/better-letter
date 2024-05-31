@@ -170,3 +170,6 @@ raw_data/*
 
 # Ignore all files within the text_extractor/data_images directory
 text_extractor/data_images/*
+
+# never push a .DS_Store
+.DS_Store
