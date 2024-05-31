@@ -18,6 +18,7 @@ def clean_extracted_text(text):
     text = re.sub(r'\s+', ' ', text).strip()  # remove extra spaces
     text = re.sub(r';', ',', text)  # replace semicolons with commas
     text = re.sub(r':', '.', text)  # replace colons with periods
+    text = re.sub(r'_', ',', text)  # replace underscore with commas
 
     # remove text inside curly or other brackets
     text = re.sub(r'\{.*?\}', '', text)
@@ -34,10 +35,20 @@ def clean_extracted_text(text):
     if sehr_geehrt_index:
         text = text[sehr_geehrt_index.start():]
 
+    # remove text before "Guten Tag" followed by any characters
+    guten_tag_index = re.search(r'Guten Tag.*', text, flags=re.IGNORECASE)
+    if guten_tag_index:
+        text = text[guten_tag_index.start():]
+
     # find the index of "Berliner Sparkasse" and remove everything after it
     berliner_sparkasse_index = text.find("Berliner Sparkasse")
     if berliner_sparkasse_index != -1:
         text = text[:berliner_sparkasse_index]
+
+    # find the index of "Freundliche Grüße" and remove everything after it
+    freundliche_gruße_index = text.find("Freundliche Grüße")
+    if freundliche_gruße_index != -1:
+        text = text[:freundliche_gruße_index]
 
     # find the index of the first comma and remove it and everything before it
     first_comma_index = text.find(',')

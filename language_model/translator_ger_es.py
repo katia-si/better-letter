@@ -5,7 +5,7 @@ import os
 tokenizer_translate = MarianTokenizer.from_pretrained("Helsinki-NLP/opus-mt-de-es")
 model_translate = MarianMTModel.from_pretrained("Helsinki-NLP/opus-mt-de-es")
 
-def translate_to_spanish_and_print(german_text):
+def translate_and_print(german_text):
     """
     translates german text to spanish using a pre-trained MarianMT model and prints the translation.
 

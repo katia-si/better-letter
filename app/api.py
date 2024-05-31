@@ -2,7 +2,7 @@ from flask import Flask, request
 from language_model.ocr_processor import perform_ocr
 from language_model.ocr_processor import process_images
 from language_model.text_cleaner import clean_text
-from language_model.summarizer_long import generate_summary
+from language_model.summarizer_ger import generate_summary
 from language_model.translator_ger_eng import translate_to_english
 
 app = Flask(__name__)

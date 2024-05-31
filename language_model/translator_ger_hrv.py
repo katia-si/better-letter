@@ -5,7 +5,7 @@ import os
 tokenizer_translate = MarianTokenizer.from_pretrained("Helsinki-NLP/opus-mt-de-hrv")
 model_translate = MarianMTModel.from_pretrained("Helsinki-NLP/opus-mt-de-hrv")
 
-def translate_to_croation_and_print(german_text):
+def translate_and_print(german_text):
     """
     translates german text to croatian using a pre-trained MarianMT model and prints the translation.
 
@@ -23,5 +23,3 @@ def translate_to_croation_and_print(german_text):
     # print(translated_text)
 
     return translated_text
-
-

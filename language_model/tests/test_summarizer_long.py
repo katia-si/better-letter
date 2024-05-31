@@ -1,6 +1,6 @@
 # language_model/tests/test_summarizer_long.py
 
-from language_model.summarizer_long import generate_summary_longer
+from language_model.summarizer_ger import generate_summary_longer
 
 def test_generate_summary_longer():
     # Test case 1: Test with a simple text

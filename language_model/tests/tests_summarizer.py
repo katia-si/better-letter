@@ -1,5 +1,5 @@
 import os
-from language_model.summarizer_long import generate_summary_longer, summarize_text
+from language_model.summarizer_ger import generate_summary_longer, summarize_text
 
 def test_generate_summary_longer():
     sample_text = (

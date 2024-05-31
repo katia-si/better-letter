@@ -22,8 +22,8 @@ def calculate_dynamic_lengths(input_text, max_tokens=1024):
     input_length = tokenized_text.size(1)
 
     # define the dynamic lengths as a percentage of the input length
-    max_length = min(max(input_length // 2, 50), max_tokens)  # max half the input length, but min 50 and at most max_tokens
-    min_length = max(min(input_length // 4, 100), 30)  # max a quarter of the input length, but min 30 and at most 100
+    max_length = min(max(input_length // 2, 10), 500)  # max half the input length, but min 50 and at most max_tokens
+    min_length = max(min(input_length // 4, 20), 50)  # max a quarter of the input length, but min 20 and at most 100
 
     return max_length, min_length
 

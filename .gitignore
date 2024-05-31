@@ -171,5 +171,9 @@ raw_data/*
 # Ignore all files within the text_extractor/data_images directory
 text_extractor/data_images/*
 
-# never push a .DS_Store
+# never push a .DS_Store!
+#.DS_Store files are macOS system files that store custom attributes of a folder's contents,
+# such as the position of icons or background color. These files are typically hidden,
+# but they can become problematic if added to a Git repository, especially if you're collaborating
+# with people who use different operating systems.
 .DS_Store
