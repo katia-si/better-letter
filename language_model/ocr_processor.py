@@ -3,6 +3,7 @@ from PIL import Image
 from io import BytesIO
 import pytesseract
 
+
 def process_image(input):
     """
     process an image file or image data using OCR and return the extracted text.
@@ -56,6 +57,17 @@ if __name__ == "__main__":
 
 
 
+
+
+
+
+
+
+
+##########################
+### Tessearct is faster on local but not really able to do as docker image
+##########################
+
 '''
 import easyocr
 from PIL import Image
@@ -72,7 +84,7 @@ def process_image(input):
     Returns:
         str: the extracted text.
     """
-    reader = easyocr.Reader(['de'])
+    reader = easyocr.Reader(['de'], gpu = True)
 
     # determine if input is a file path or raw image data
     if isinstance(input, str):
@@ -115,4 +127,5 @@ if __name__ == "__main__":
         print(extracted_text)
     else:
         print("Failed to extract text from the image.")
+
 '''

@@ -177,3 +177,6 @@ text_extractor/data_images/*
 # but they can become problematic if added to a Git repository, especially if you're collaborating
 # with people who use different operating systems.
 .DS_Store
+
+# dont add other repos
+better-letter-UI/
